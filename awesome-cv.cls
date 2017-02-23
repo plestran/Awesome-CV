@@ -387,6 +387,9 @@
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{P}[1]{>{\centering\let\newline\\\arraybackslash}p{#1}}
+\newcolumntype{J}[1]{>{\raggedright\let\newline\\\arraybackslash}p{#1}}
+\newcolumntype{K}[1]{>{\raggedleft\let\newline\\\arraybackslash}p{#1}}
 
 % Use to draw horizontal line with specific thickness
 \def\vhrulefill#1{\leavevmode\leaders\hrule\@height#1\hfill \kern\z@}
@@ -562,6 +565,19 @@
 }{%
   \end{center}
 }
+% Define an entry of cv information without a description
+% Usage: \cventryshort{<position>}{<title>}{<location>}{<date>}
+\newcommand*{\cventryshort}[4]{%
+  \setlength\tabcolsep{0pt}
+  \setlength{\extrarowheight}{0pt}
+  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
+    \ifempty{#2#3}
+      {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
+      {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
+      \entrypositionstyle{#1} & \entrydatestyle{#4}} 
+  \end{tabular*}
+}
+
 % Define an entry of cv information
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
 \newcommand*{\cventry}[5]{%
@@ -617,6 +633,31 @@
 % Usage: \cvhonor{<position>}{<title>}{<location>}{<date>}
 \newcommand*{\cvhonor}[4]{%
   \honordatestyle{#4} & \honorpositionstyle{#1}, \honortitlestyle{#2} & \honorlocationstyle{#3} \\
+}
+
+% Define an environment for cvpresentation
+\newenvironment{cvpresentations}{
+    \setlength\tabcolsep{0pt}
+    \setlength{\extrarowheight}{0pt}
+     \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} P{1.75cm} J{\textwidth - 4.25cm} K{2.5cm}}
+}
+    {\\ \end{tabular*} 
+}
+\newcommand*{\cvpresentation}[3]{%
+  \honordatestyle{#3} & \skillsetstyle{#1} & \honorlocationstyle{#2} \\ 
+}
+% Define an environment for cvpresentation
+\newenvironment{cvpublications}{
+    \setlength\tabcolsep{0pt}
+    \setlength{\extrarowheight}{0pt}
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} P{0.5cm} J{\textwidth - 0.5cm}}
+}
+    {\\ \end{tabular*} 
+}
+% Define a line of cv information(honor, award or something else)
+% Usage: \cvpresentation{<position>}{<title>}{<location>}{<date>}
+\newcommand*{\cvpublication}[2]{%
+  \honordatestyle{#1} & \skillsetstyle{#2} \\ 
 }
 
 % Define an environment for cvskill
