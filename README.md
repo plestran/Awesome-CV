@@ -42,6 +42,7 @@ You can see [PDF](https://raw.githubusercontent.com/plestran/resume-template/mas
 |:---:|:---:|
 | [![Résumé](https://raw.githubusercontent.com/plestran/resume-template/master/examples/resume-0.png)](https://raw.githubusercontent.com/plestran/resume-template/master/examples/resume.pdf)  | [![Résumé](https://raw.githubusercontent.com/plestran/resume-template/master/examples/resume-1.png)](https://raw.githubusercontent.com/plestran/resume-template/master/examples/resume.pdf) |
 
+<!--
 #### Cover Letter
 
 You can see [PDF](https://raw.githubusercontent.com/posquit0/Awesome-CV/master/examples/coverletter.pdf)
@@ -49,7 +50,7 @@ You can see [PDF](https://raw.githubusercontent.com/posquit0/Awesome-CV/master/e
 | Without Sections | With Sections |
 |:---:|:---:|
 | [![Cover Letter(Traditional)](https://raw.githubusercontent.com/posquit0/Awesome-CV/master/examples/coverletter-0.png)](https://raw.githubusercontent.com/posquit0/Awesome-CV/master/examples/coverletter.pdf)  | [![Cover Letter(Awesome)](https://raw.githubusercontent.com/posquit0/Awesome-CV/master/examples/coverletter-1.png)](https://raw.githubusercontent.com/posquit0/Awesome-CV/master/examples/coverletter.pdf) |
-
+-->
 
 ## <a name="quick-start">Quick Start
 
@@ -81,6 +82,8 @@ This should result in the creation of ``{your-cv}.pdf``
 
 ## <a name="credit">Credit
 
+[**Byungjin Park**](https://github.com/posquit0) made this wonderful template that I modified to suit my needs. 
+
 [**LaTeX**](http://www.latex-project.org) is a fantastic typesetting program that a lot of people use these days, especially the math and computer science people in academia.
 
 [**LaTeX FontAwesome**](https://github.com/furl/latex-fontawesome) is bindings for FontAwesome icons to be used in XeLaTeX.
@@ -93,7 +96,5 @@ This should result in the creation of ``{your-cv}.pdf``
 ## <a name="contact">Contact
 
 You are free to take my `.tex` file and modify it to create your own resume. Please don't use my resume for anything else without my permission, though!
-
-If you have any questions, feel free to join me at [`#posquit0` on Freenode](irc://irc.freenode.net/posquit0) and ask away. Click [here](https://kiwiirc.com/client/irc.freenode.net/posquit0) to connect.
 
 Good luck!
