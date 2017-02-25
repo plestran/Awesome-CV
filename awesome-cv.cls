@@ -216,7 +216,7 @@
 % For elements of honor
 \newcommand*{\honortitlestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\color{graytext} #1}}
 \newcommand*{\honorpositionstyle}[1]{{\fontsize{10pt}{1em}\bodyfont\bfseries\color{darktext} #1}}
-\newcommand*{\honordatestyle}[1]{{\fontsize{9pt}{1em}\bodyfont\color{graytext} #1}}
+\newcommand*{\honordatestyle}[1]{{\fontsize{10pt}{1em}\bodyfont\color{graytext} #1}}
 \newcommand*{\honorlocationstyle}[1]{{\fontsize{10pt}{1em}\bodyfontlight\slshape\color{awesome} #1}}
 
 % For elements of skill
@@ -479,7 +479,7 @@
         {}%
         {%
           \ifbool{isstart}{\setbool{isstart}{false}}{\acvHeaderSocialSep}%
-          \href{https://www.linkedin.com/in/\@linkedin}{\faLinkedinSquare\acvHeaderIconSep\@linkedin}%
+          \href{https://www.linkedin.com/in/\@linkedin-08193a9b}{\faLinkedinSquare\acvHeaderIconSep\@linkedin}%
         }%
       \ifthenelse{\isundefined{\@twitter}}%
         {}%
@@ -565,31 +565,20 @@
 }{%
   \end{center}
 }
-% Define an entry of cv information without a description
-% Usage: \cventryshort{<position>}{<title>}{<location>}{<date>}
-\newcommand*{\cventryshort}[4]{%
-  \setlength\tabcolsep{0pt}
-  \setlength{\extrarowheight}{0pt}
-  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
-    \ifempty{#2#3}
-      {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
-      {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
-      \entrypositionstyle{#1} & \entrydatestyle{#4}} 
-  \end{tabular*}
-}
 
 % Define an entry of cv information
 % Usage: \cventry{<position>}{<title>}{<location>}{<date>}{<description>}
 \newcommand*{\cventry}[5]{%
-  \vspace{-2.0mm}
+%  \vspace{-2.0mm}
   \setlength\tabcolsep{0pt}
   \setlength{\extrarowheight}{0pt}
   \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} L{\textwidth - 4.5cm} R{4.5cm}}
-    \ifempty{#2#3}
-      {\entrypositionstyle{#1} & \entrydatestyle{#4} \\}
-      {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
-      \entrypositionstyle{#1} & \entrydatestyle{#4} \\}
-    \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}
+      \ifempty{#2#3}
+        {\entrypositionstyle{#1} & \entrydatestyle{#4}}
+        {\entrytitlestyle{#2} & \entrylocationstyle{#3} \\
+        \entrypositionstyle{#1} & \entrydatestyle{#4}}
+      \ifempty{#5}{}{
+     \\ \multicolumn{2}{L{\textwidth}}{\descriptionstyle{#5}}}
   \end{tabular*}%
 }
 
@@ -624,7 +613,7 @@
   \begin{center}
     \setlength\tabcolsep{0pt}
     \setlength{\extrarowheight}{0pt}
-    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} C{1.5cm} L{\textwidth - 4.0cm} R{2.5cm}}
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} C{1.75cm} L{\textwidth - 4.25cm} R{2.5cm}}
 }{%
     \end{tabular*}
   \end{center}
@@ -643,10 +632,11 @@
 }
     {\\ \end{tabular*} 
 }
+% Usage: \cvpresentation{<title>}{<location>}{<date>}
 \newcommand*{\cvpresentation}[3]{%
   \honordatestyle{#3} & \skillsetstyle{#1} & \honorlocationstyle{#2} \\ 
 }
-% Define an environment for cvpresentation
+% Define an environment for cvpublication
 \newenvironment{cvpublications}{
     \setlength\tabcolsep{0pt}
     \setlength{\extrarowheight}{0pt}
@@ -654,8 +644,7 @@
 }
     {\\ \end{tabular*} 
 }
-% Define a line of cv information(honor, award or something else)
-% Usage: \cvpresentation{<position>}{<title>}{<location>}{<date>}
+% Usage: \cvpublication{<number>}{<title>}
 \newcommand*{\cvpublication}[2]{%
   \honordatestyle{#1} & \skillsetstyle{#2} \\ 
 }
