@@ -40,7 +40,7 @@
 
 #### Résumé
 
-You can see [PDF](https://raw.githubusercontent.com/plestran/resume-template/master/examples/resume.pdf)
+You can also grab the [PDF](https://raw.githubusercontent.com/plestran/resume-template/master/examples/resume.pdf)
 
 | Page. 1 | Page. 2 |
 |:---:|:---:|
