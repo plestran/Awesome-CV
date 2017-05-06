@@ -88,6 +88,7 @@
   pdfsubject={},
   pdfkeywords={}
 }
+\RequirePackage{longtable}
 
 
 %-------------------------------------------------------------------------------
@@ -613,9 +614,9 @@
   \begin{center}
     \setlength\tabcolsep{0pt}
     \setlength{\extrarowheight}{0pt}
-    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} C{1.75cm} L{\textwidth - 4.25cm} R{2.5cm}}
+    \begin{longtable}{@{\extracolsep{\fill}} C{1.75cm} L{\textwidth - 4.25cm} R{2.5cm}}
 }{%
-    \end{tabular*}
+    \end{longtable}
   \end{center}
 }
 % Define a line of cv information(honor, award or something else)
@@ -628,21 +629,24 @@
 \newenvironment{cvpresentations}{
     \setlength\tabcolsep{0pt}
     \setlength{\extrarowheight}{0pt}
-     \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} P{1.75cm} J{\textwidth - 4.25cm} K{2.5cm}}
+    \renewcommand*{\arraystretch}{1.5}
+     \begin{longtable}{@{\extracolsep{\fill}} P{1.75cm} J{\textwidth - 4.25cm} K{2.5cm}}
 }
-    {\\ \end{tabular*} 
+    {\\ \end{longtable} 
 }
 % Usage: \cvpresentation{<title>}{<location>}{<date>}
 \newcommand*{\cvpresentation}[3]{%
   \honordatestyle{#3} & \skillsetstyle{#1} & \honorlocationstyle{#2} \\ 
 }
+
 % Define an environment for cvpublication
 \newenvironment{cvpublications}{
-    \setlength\tabcolsep{0pt}
-    \setlength{\extrarowheight}{0pt}
-    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} P{0.5cm} J{\textwidth - 0.5cm}}
+     \setlength\tabcolsep{0pt}
+     \setlength{\extrarowheight}{0pt}
+     \renewcommand*{\arraystretch}{1.5}
+     \begin{longtable}{@{\extracolsep{\fill}} P{0.5cm} J{\textwidth - 0.5cm}}
 }
-    {\\ \end{tabular*} 
+     {\\ \end{longtable} 
 }
 % Usage: \cvpublication{<number>}{<title>}
 \newcommand*{\cvpublication}[2]{%
@@ -679,7 +683,6 @@
   \end{justify}
   \vspace{-4.0mm}
 }
-
 
 %-------------------------------------------------------------------------------
 %                Commands for elements of Cover Letter
