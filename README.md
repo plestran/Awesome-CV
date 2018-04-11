@@ -4,7 +4,7 @@
 
 ## <a name="preview"></a>Preview
 
-[![Resume](https://raw.githubusercontent.com/plestran/resume-template/master/examples/resume-0.png)](https://raw.githubusercontent.com/plestran/resume-template/master/examples/resume.pdf)
+[![Resume](https://raw.githubusercontent.com/plestran/resume-template/master/examples/resume.png)](https://raw.githubusercontent.com/plestran/resume-template/master/examples/resume.pdf)
 
 ## <a name="quick-start">Quick Start
 
